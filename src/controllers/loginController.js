@@ -22,7 +22,7 @@ const loginController = {
       // }, 'univesp', { expiresIn: '1h' });
       
       res.status(200).json(usuario);
-    } catch (error) {}
+    } catch (error) {
       console.log(error);
       res.status(400).send(`Falha ao realizar login ${error}`);
     }
