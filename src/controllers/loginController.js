@@ -15,13 +15,13 @@ const loginController = {
         return res.status(400).send(`Credenciais inválidas`);
       }
 
-      // const token = jwt.sign({
-      //   id: usuario._id,
-      //   nome: usuario.nome,
-      //   email: usuario.email
-      // }, 'univesp', { expiresIn: '1h' });
+      const token = jwt.sign({
+        id: usuario._id,
+        nome: usuario.nome,
+        email: usuario.email
+      }, 'univesp', { expiresIn: '1h' });
       
-      res.status(200).json({ passou });
+      res.status(200).json({msg: 'Autenticado', token})
     } catch (error) {
       console.log(error);
       res.status(400).send(`Falha ao realizar login ${error}`);
