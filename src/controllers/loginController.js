@@ -21,7 +21,7 @@ const loginController = {
         email: usuario.email
       }, 'univesp', { expiresIn: '1h' });
       
-      res.status(200).json({msg: 'Autenticado', token})
+      res.status(200).json({msg: 'Autenticado'})
     } catch (error) {
       console.log(error);
       res.status(400).send(`Falha ao realizar login ${error}`);
